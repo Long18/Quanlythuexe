@@ -1,0 +1,1 @@
+sqlcmd -E -S WILLIAM\WILLIAM -i Setup_DataBase.sql
