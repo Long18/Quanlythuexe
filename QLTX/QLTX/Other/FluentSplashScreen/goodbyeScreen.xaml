@@ -1,0 +1,32 @@
+﻿<dx:SplashScreenWindow x:Class="QLTX.goodbyeScreen"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                       xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+                       xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                       ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner" 
+                       MinWidth="500"
+                       MinHeight="450"
+                       AllowAcrylic="True"
+                       dx:DXDesignTimeHelper.Background="#FF525252"
+                       mc:Ignorable="d"
+                       d:DataContext="{x:Static dxmvvm:DXSplashScreenViewModel.DesignTimeData}">
+
+   
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="PART_Title" Grid.Row="1" Text="Cám ơn vì bạn đã sử dụng chương trình" Style="{DynamicResource ResourceKey={dxt:FluentSplashScreenThemeKey ResourceKey=TitleTextBoxStyle}}" FontSize="30"/>
+        <StackPanel Orientation="Vertical" Grid.Row="2" VerticalAlignment="Top">
+            <TextBlock x:Name="PART_SubTitle" Text="Quản Lý Thuê Xe" Style="{DynamicResource ResourceKey={dxt:FluentSplashScreenThemeKey ResourceKey=SubTitleTextBoxStyle}}"/>
+            <ProgressBar IsIndeterminate="{Binding IsIndeterminate}" Value="{Binding Progress}" Grid.Row="2" Style="{DynamicResource ResourceKey={dxt:FluentSplashScreenThemeKey ResourceKey=ProgressBarStyle}}"/>
+        </StackPanel>
+        <TextBlock x:Name="PART_Status"  Text="{Binding Status}" Grid.Row="2" Style="{DynamicResource ResourceKey={dxt:FluentSplashScreenThemeKey ResourceKey=StatusTextBoxStyle}}"/>
+    </Grid>
+</dx:SplashScreenWindow>
